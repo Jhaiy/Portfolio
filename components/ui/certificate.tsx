@@ -1,4 +1,5 @@
 import { Separator } from "@/components/ui/separator";
+import { ArrowRight } from "lucide-react";
 
 type CertCardsProps = {
   badge: string;
@@ -9,22 +10,34 @@ type CertCardsProps = {
 };
 
 export default function CertCards({
+  badge,
   title,
   provider,
   date,
   link,
 }: CertCardsProps) {
   return (
-    <div className="flex flex-row flex-wrap sm:flex-col gap-0">
-      <div className="flex-shrink-0 m-2">
-        <img alt={title} src={link} className="w-40 h-40 object-cover" />
-        <p className="text-sm">{title}</p>
-        <p className="text-xs">{provider}</p>
+    <div className="border">
+      <div className="w-full p-5">
+        <img alt={title} src={badge} className="w-18 h-18 object-cover" />
+        <div className="my-6">
+          <h3 className="text-md font-bold line-clamp-1 tracking-normal">
+            {title}
+          </h3>
+          <p className="text-xs text-muted-foreground font-medium">
+            {provider}
+          </p>
+        </div>
         <Separator />
-        <div className="flex flex-row justify-between items-center">
-          <p className="text-xs">{date}</p>
-          <a href={link} target="_blank">
+        <div className="flex flex-row my-3 justify-between items-center">
+          <p className="text-xs text-muted-foreground font-medium">{date}</p>
+          <a
+            className="uppercase text-xs font-bold underline flex flex-row gap-1"
+            href={link}
+            target="_blank"
+          >
             View Certificate
+            <ArrowRight size={12} />
           </a>
         </div>
       </div>
