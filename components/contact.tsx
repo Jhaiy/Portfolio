@@ -17,7 +17,7 @@ export default function Contact() {
               vista.valentino.samson@gmail.com
             </a>
             <a
-              href="https://www.linkedin.com/in/vista-valentino-iii-s-719445342/"
+              href="https://www.linkedin.com/in/jhay-dev"
               className="text-md font-bold underline underline-offset-5 decoration-1"
             >
               LinkedIn
