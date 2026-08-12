@@ -26,7 +26,7 @@ export default function Hero() {
             borderRadius: "9999px",
           }}
           gridSize={8}
-          pixelColor="#111111"
+          pixelColor="#fbfbfb"
           animationStepDuration={0.5}
           aspectRatio="100%"
           firstContent={

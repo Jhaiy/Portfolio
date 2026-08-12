@@ -12,7 +12,7 @@ const setContents = [
   },
   {
     label: "Currently",
-    parameters: "Working at Xilnex Philippines",
+    parameters: "Open for opportunities",
   },
   {
     label: "Programming Languages",

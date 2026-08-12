@@ -13,13 +13,15 @@ function clamp(value: number, min: number, max: number) {
 export default function HomeParallax({ children }: HomeParallaxProps) {
   const items = useMemo(() => Children.toArray(children), [children]);
   const itemRefs = useRef<Array<HTMLDivElement | null>>([]);
+  const revealedProgressRef = useRef<number[]>([]);
   const [styles, setStyles] = useState(() =>
-    items.map(() => ({ opacity: 1, scale: 1 })),
+    items.map(() => ({ opacity: 0.06, scale: 0.82 })),
   );
 
   useEffect(() => {
     itemRefs.current = itemRefs.current.slice(0, items.length);
-    setStyles(items.map(() => ({ opacity: 1, scale: 1 })));
+    revealedProgressRef.current = items.map(() => 0);
+    setStyles(items.map(() => ({ opacity: 0.06, scale: 0.82 })));
   }, [items.length]);
 
   useEffect(() => {
@@ -31,18 +33,30 @@ export default function HomeParallax({ children }: HomeParallaxProps) {
       frameId = window.requestAnimationFrame(() => {
         const fadeWindow = window.innerHeight * 0.45;
 
-        setStyles(
-          itemRefs.current.map((element) => {
+        setStyles(() =>
+          itemRefs.current.map((element, index) => {
+            const currentProgress = revealedProgressRef.current[index] ?? 0;
+
             if (!element) {
-              return { opacity: 1, scale: 1 };
+              return {
+                opacity: 0.06 + currentProgress * 0.94,
+                scale: 0.82 + currentProgress * 0.18,
+              };
             }
 
             const rect = element.getBoundingClientRect();
-            const exitProgress = clamp(rect.bottom / fadeWindow, 0, 1);
+            const entryProgress = clamp(
+              (window.innerHeight - rect.top) / fadeWindow,
+              0,
+              1,
+            );
+            const nextProgress = Math.max(currentProgress, entryProgress);
+
+            revealedProgressRef.current[index] = nextProgress;
 
             return {
-              opacity: 0.06 + exitProgress * 0.94,
-              scale: 0.82 + exitProgress * 0.18,
+              opacity: 0.06 + nextProgress * 0.94,
+              scale: 0.82 + nextProgress * 0.18,
             };
           }),
         );
