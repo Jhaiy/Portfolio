@@ -7,7 +7,7 @@ const certificates = [
     title: "Linux Unhatched",
     provider: "Cisco Networking Academy",
     date: "2026",
-    link: "",
+    link: "https://www.netacad.com/certificates/?issuanceId=2520f971-c3a8-4702-8898-c653e50eb88a",
   },
   {
     badge:
@@ -15,7 +15,7 @@ const certificates = [
     title: "Introduction to Data Science",
     provider: "Cisco Networking Academy",
     date: "2026",
-    link: "",
+    link: "https://www.netacad.com/certificates/?issuanceId=453152ca-a1ef-424d-811b-edcafcdc19fa",
   },
   {
     badge:
@@ -23,7 +23,7 @@ const certificates = [
     title: "Networking Devices and Initial Configuration",
     provider: "Cisco Networking Academy",
     date: "2026",
-    link: "",
+    link: "https://www.netacad.com/certificates/?issuanceId=e98ec7a0-298c-479f-8da0-af9182bcfeb6",
   },
   {
     badge:
@@ -31,7 +31,7 @@ const certificates = [
     title: "Endpoint Security",
     provider: "Cisco Networking Academy",
     date: "2026",
-    link: "",
+    link: "https://www.netacad.com/certificates/?issuanceId=67b9a370-ac89-4ef3-b816-8821a3fb6d9e",
   },
 ];
 

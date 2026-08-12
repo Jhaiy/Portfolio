@@ -1,5 +1,5 @@
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
+import { Button, buttonVariants } from "@/components/ui/button";
 import {
   Card,
   CardDescription,
@@ -7,6 +7,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import Link from "next/link";
 
 const projects = [
   {
@@ -89,7 +90,18 @@ export default function Projects() {
               <CardDescription>{project.description}</CardDescription>
             </CardHeader>
             <CardFooter className="mt-auto pt-6">
-              <Button className="w-full relative bottom-0">Visit</Button>
+              <a
+                href={project.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={buttonVariants({
+                  variant: "default",
+                  size: "lg",
+                  className: "w-full bottom-0",
+                })}
+              >
+                Visit
+              </a>
             </CardFooter>
           </Card>
         ))}
