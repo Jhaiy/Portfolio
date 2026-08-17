@@ -33,7 +33,7 @@ const projects = [
       "Express.js",
       "Python",
       "Node.js",
-      "AWS S3",
+      "AWS EC2",
       "Supabase",
     ],
   },
