@@ -55,6 +55,25 @@ const projects = [
     link: "https://github.com/Jhaiy/AVSI-Store",
     badges: ["Next.js", "TailwindCSS", "TypeScript", "Supabase", "Shadcn UI"],
   },
+  {
+    id: 5,
+    thumbnail: "/images/dexlib.png",
+    title: "DexLib (Coming soon! - In-progress)",
+    description:
+      "DexLib is a Pokemon card library and tracker that allows users to scan their Pokemon cards and keep track of its collection. It also allows users to view the details of each card, such as its type, rarity, and price.",
+    link: "https://github.com/Jhaiy/LibDex",
+    badges: [
+      "Next.js",
+      "TailwindCSS",
+      "TypeScript",
+      "Supabase",
+      "Shadcn UI",
+      "Python",
+      "Tesseract OCR",
+      "Pokémon TCG API",
+      "AWS EC2",
+    ],
+  },
 ];
 
 export default function Projects() {
